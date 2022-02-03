@@ -1,0 +1,23 @@
+[core]
+	editor = vim
+[user]
+	name = Max Sokolski
+	email = cmltawt0@gmail.com
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential]
+	helper = !aws codecommit credential-helper $@
+	UseHttpPath = true
+[alias]
+	co = checkout
+    cp = cherry-pick
+    h = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=iso8601
+    gh = log --all --graph --decorate --oneline
+
